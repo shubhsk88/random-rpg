@@ -1,27 +1,32 @@
-
-
 {
   "assets": {
     "background_image": {
       "type": "image",
-      "source": "src/assets/images/battles/background.png"
+      "source": "src/assets/images/battles/background1.png"
+    }
+  },
+
+  "groups": ["background", "texts"],
+  "sprites": {
+    "background": {
+      "type": "sprite",
+      "position": { "x": 320, "y": 240 },
+      "texture": "background_image",
+      "group": "background"
     },
-    "sprites": {
-      "background": {
-        "type": "sprite",
-        "position": { "x": 320, "y": 240 },
-        "texture": "background_image"
-      },
-      "title-message": {
-        "type": "text",
-        "position": { "x": 20, "y": 100 },
-        "style": { "font": "65px Fondamento", "fill": "#000000" }
-      },
-      "start_message": {
-        "type": "text",
-        "position": { "x": 150, "y": 200 },
-        "style": { "font": "20px Fondamento ", "fill": "#000000" }
-      }
+    "title-message": {
+      "type": "text",
+      "position": { "x": 80, "y": 100 },
+      "style": { "font": "65px Fondamento", "fill": "#000000" },
+      "text": "Norova Smash",
+      "group": "texts"
+    },
+    "start_message": {
+      "type": "text",
+      "text": "Start",
+      "position": { "x": 240, "y": 200 },
+      "style": { "font": "40px Fondamento", "fill": "#000000" },
+      "group": "texts"
     }
   }
 }
