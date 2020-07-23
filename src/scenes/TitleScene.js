@@ -1,4 +1,4 @@
-import bgimage from '../assets/background.png';
+import bgimage from '../assets/images/battles/background.png';
 
 class TitleScene extends Phaser.Scene {
   constructor() {
