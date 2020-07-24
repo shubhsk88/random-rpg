@@ -1,6 +1,10 @@
+import Prefab from '../Prefabs/Prefab';
+import TextPrefab from '../Prefabs/TextPrefab';
+
 class JSONLevelScene extends Phaser.Scene {
   constructor(key) {
     super({ key });
+    
   }
   init(data) {
     this.levelData = data.levelData;
@@ -16,29 +20,12 @@ class JSONLevelScene extends Phaser.Scene {
     for (let spriteName in this.levelData.sprites) {
       let spriteData = this.levelData.sprites[spriteName];
 
-      let sprite = undefined;
-      switch (spriteData.type) {
-        case 'sprite':
-          sprite = this.add.sprite(
-            spriteData.position.x,
-            spriteData.position.y,
-            spriteData.texture
-          );
-          break;
-        case 'text':
-          sprite = this.add.text(
-            spriteData.position.x,
-            spriteData.position.y,
-            spriteData.text,
-            spriteData.style
-          );
-          break;
-        default:
-          break;
-      }
-      this.sprites[spriteName] = sprite;
-
-      this.groups[spriteData.group].add(sprite);
+      let sprite = new this.prefabClasses[spriteData.type](
+        this,
+        spriteName,
+        spriteData.position,
+        spriteData.properties
+      );
     }
   }
 }

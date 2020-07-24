@@ -9,24 +9,31 @@
   "groups": ["background", "texts"],
   "sprites": {
     "background": {
-      "type": "sprite",
+      "type": "background",
       "position": { "x": 320, "y": 240 },
-      "texture": "background_image",
-      "group": "background"
+      "properties": {
+        "texture": "background_image",
+        "group": "background"
+      }
     },
     "title-message": {
       "type": "text",
       "position": { "x": 80, "y": 100 },
-      "style": { "font": "65px Fondamento", "fill": "#000000" },
-      "text": "Norova Smash",
-      "group": "texts"
+      "properties": {
+        "style": { "font": "65px Fondamento", "fill": "#000000" },
+        "text": "Norova Smash",
+        "group": "texts"
+      }
     },
     "start_message": {
       "type": "text",
-      "text": "Start",
       "position": { "x": 240, "y": 200 },
-      "style": { "font": "40px Fondamento", "fill": "#000000" },
-      "group": "texts"
+      "properties": {
+        "text": "Start",
+
+        "style": { "font": "40px Fondamento", "fill": "#000000" },
+        "group": "texts"
+      }
     }
   }
 }
