@@ -13,7 +13,13 @@ const config = {
   type: Phaser.AUTO,
   parent: 'phaser-example',
   width: 640,
-  height: 360,
+  height: 480,
+  physics: {
+    default: 'arcade',
+    arcade: {
+      gravity: { y: 0 },
+    },
+  },
 };
 
 const game = new Phaser.Game(config);

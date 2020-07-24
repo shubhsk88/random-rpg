@@ -1,12 +1,12 @@
 import JSONLevelScene from './JSONLevelScene';
 import Prefab from '../Prefabs/Prefab';
 import TextPrefab from '../Prefabs/TextPrefab';
-
+import Player from '../Prefabs/world/Player';
 class WorldScene extends JSONLevelScene {
   constructor() {
     super('WorldScene');
     this.prefabClasses = {
-      player: Prefab.prototype.constructor,
+      player: Player.prototype.constructor,
     };
   }
   create() {
@@ -22,6 +22,7 @@ class WorldScene extends JSONLevelScene {
       tilesetIndex += 1;
     }, this);
     this.layers = {};
+    console.log(this.prefabClasses);
 
     this.map.layers.forEach((layer) => {
       this.layers[layer.name] = this.map.createStaticLayer(
@@ -33,7 +34,7 @@ class WorldScene extends JSONLevelScene {
       }
     }, this);
     super.create();
-    console.log(this.layers);
+   
     this.map.objects.forEach((objectLayer) => {
       objectLayer.objects.forEach(this.createObject, this);
     });

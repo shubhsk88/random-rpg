@@ -110,7 +110,7 @@
         {
          "columns":20,
          "firstgid":1,
-         "image":"..\/..\/..\/12-player_prefab\/assets\/images\/tileset.png",
+         "image":"..\/images\/tileset.png",
          "imageheight":384,
          "imagewidth":640,
          "margin":0,
