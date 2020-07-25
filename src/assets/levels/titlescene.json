@@ -18,7 +18,7 @@
     },
     "title-message": {
       "type": "text",
-      "position": { "x": 80, "y": 100 },
+      "position": { "x": 100, "y": 120 },
       "properties": {
         "style": { "font": "65px Fondamento", "fill": "#000000" },
         "text": "Norova Smash",
@@ -27,7 +27,7 @@
     },
     "start_message": {
       "type": "text",
-      "position": { "x": 240, "y": 200 },
+      "position": { "x": 240, "y": 220 },
       "properties": {
         "text": "Start",
 
