@@ -9,6 +9,8 @@ class Player extends Prefab {
     this.body.collideWorldBounds = true;
     this.scene.physics.add.collider(this, this.scene.layers.buildings);
     this.cursors = this.scene.input.keyboard.createCursorKeys();
+
+    this.moving = { left: false, right: false, front: false, back: false };
     const anims = this.scene.anims;
     anims.create({
       key: 'front',
@@ -42,14 +44,12 @@ class Player extends Prefab {
       frameRate: 6,
       repeat: 1,
     });
-
-    
   }
 
   update() {
     this.body.setVelocity(0);
     let { cursors } = this;
-
+    console.log(this.moving);
     if (cursors.left.isDown) {
       this.body.setVelocityX(-100);
     } else if (cursors.right.isDown) {
@@ -69,6 +69,9 @@ class Player extends Prefab {
     } else if (cursors.down.isDown) {
       this.anims.play('front', true);
     } else this.anims.stop();
+  }
+  changeMovement(direction, move) {
+    this.moving[direction] = move;
   }
 }
 

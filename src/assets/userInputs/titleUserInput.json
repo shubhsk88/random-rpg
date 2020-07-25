@@ -1,12 +1,8 @@
 {
-    "keydown":{
-        "Enter":{
-            "callback":"scene.startGame"
-        }
-    },
-    "keyup":{
-        "Enter":{
-            "callback":"scene.startGame"
-        }
+  "keydown": {
+    "Enter": {
+      "callback": "scene.startGame"
     }
+  },
+  "keyup": {}
 }

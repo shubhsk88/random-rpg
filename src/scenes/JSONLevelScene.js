@@ -1,6 +1,6 @@
 import Prefab from '../Prefabs/Prefab';
 import TextPrefab from '../Prefabs/TextPrefab';
-
+import UserInput from '../plugins/UserInput';
 class JSONLevelScene extends Phaser.Scene {
   constructor(key) {
     super({ key });
@@ -10,11 +10,11 @@ class JSONLevelScene extends Phaser.Scene {
   }
   create() {
     this.groups = {};
-   
+
     this.levelData.groups.forEach((group) => {
       this.groups[group] = this.physics.add.group();
     }, this);
-    this.sprites = {};
+
     this.prefabs = {};
 
     for (let spriteName in this.levelData.sprites) {
@@ -27,6 +27,9 @@ class JSONLevelScene extends Phaser.Scene {
         spriteData.properties
       );
     }
+    this.userInput = new UserInput(this);
+    this.userInputData = this.cache.json.get(this.levelData.userInput.key);
+    this.userInput.setInput(this.userInputData);
   }
   update() {
     for (let prefabName in this.prefabs) {

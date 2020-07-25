@@ -15,8 +15,10 @@ class UserInput {
     this.enabled = true;
   }
   processInput(event) {
+    console.log(this.userInputs);
     if (this.enabled) {
       let userInput = this.userInputs[event.type][event.key];
+      
       if (userInput) {
         let context = undefined;
         let callbackData = userInput.callback.split('.');
@@ -31,3 +33,4 @@ class UserInput {
     }
   }
 }
+export default UserInput;

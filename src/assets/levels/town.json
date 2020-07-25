@@ -17,5 +17,9 @@
   },
 
   "groups": ["players"],
-  "map": { "key": "level_tilemap", "tilesets": ["map_tileset"] }
+  "map": { "key": "level_tilemap", "tilesets": ["map_tileset"] },
+  "userInput": {
+    "key": "townUserInput",
+    "path": "src/assets/userInputs/worldMapUserInput.json"
+  }
 }

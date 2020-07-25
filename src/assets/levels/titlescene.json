@@ -35,5 +35,9 @@
         "group": "texts"
       }
     }
+  },
+  "userInput": {
+    "key": "titleUserInput",
+    "path": "src/assets/userInputs/titleUserInput.json"
   }
 }
